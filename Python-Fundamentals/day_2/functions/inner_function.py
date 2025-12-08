@@ -19,14 +19,18 @@ print("---------------------------------")
 """
 Inner functions can modify outer variables using `nonlocal` keyword
 """
+y = 10
 def outer():
     x = 10
     def inner():
         nonlocal x
+        global y #change global variable using global keyword
+        y = 9
         x = 20
     inner()
     print(x)  # 20
 outer()
+print(y) #9
 
 print("---------------------------------")
 """
@@ -41,6 +45,7 @@ Inner Function also used by:
 def outer_function(x):
     # Outer function: takes 'x' and defines inner_function
     def inner_function(y):
+        print(f"x{x, y}")
         return x + y  # 'x' is remembered from outer_function
     return inner_function  # Returns inner function (closure)
 
@@ -48,7 +53,7 @@ def outer_function(x):
 closure = outer_function(10)
 
 # Call the closure with different values of 'y'
-print(closure(5)) 
+print(closure(5))
 print(closure(20))
 print(closure.__closure__[0].cell_contents)
 

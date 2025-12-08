@@ -43,3 +43,11 @@ values = d.values()
 
 res = zip(keys, values)
 print(list(res))
+
+##the zip() function is designed to stop pairing elements as soon as the shortest input iterable is exhausted, effectively ignoring any extra elements in the longer iterables.
+
+names = ["Asha", "Isha", "Mina", "Ravi"]
+scores = [90, 85, 88]
+
+result = list(zip(names, scores))
+print(result)

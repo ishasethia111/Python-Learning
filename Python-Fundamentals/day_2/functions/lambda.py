@@ -11,7 +11,9 @@ Anonymous Function:
 
 """
 #Basic Examples: of finding cube of a number
+
 def cube(x): return x*x*x   # without lambda
+
 cube_l = lambda x : x*x*x  # with lambda
 
 print(cube(7))
@@ -19,7 +21,7 @@ print(cube_l(7))
 
 
 print("---------------------------------")
-
+#List comphresive example
 li = [lambda arg=x: arg * 10 for x in range(1, 5)]
 for i in li:
     print(i())
